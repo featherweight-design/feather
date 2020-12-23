@@ -1,4 +1,9 @@
 module.exports = {
+  env: {
+    browser: true,
+    amd: true,
+    node: true,
+  },
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -18,7 +23,7 @@ module.exports = {
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-    'no-use-before-define': 'off',
+    'no-use-before-define': 'off', // Turned off due to conflict with the below rule, which should be used with TS
     '@typescript-eslint/no-use-before-define': ['error', { variables: false }],
     'react-hooks/rules-of-hooks': 'error',
     'react/jsx-uses-react': 'off', // No longer needed as of React v17
