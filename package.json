@@ -1,7 +1,28 @@
 {
   "name": "feather",
   "version": "0.1.0",
+  "description": "The primary front-end repo template for application development. Uses CRA and TypeScript with Eslint, Tslint, Prettier, Jest, and Cypress configurations ready to go!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/featherweight-design/feather.git"
+  },
+  "bugs": {
+    "url": "https://github.com/featherweight-design/feather/labels/%F0%9F%90%9B%20%20Bug"
+  },
+  "author": "Featherweight Design",
+  "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "clean": "rm -rf node_modules yarn.lock && yarn install",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint './src/**/*.{js,ts,tsx,mdx}' --fix",
+    "lint-github-check": "eslint './src/**/*.{js,ts,tsx,mdx}'",
+    "upgrade": "yarn upgrade-interactive --latest"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -15,12 +36,6 @@
     "react-scripts": "4.0.1",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
