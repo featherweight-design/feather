@@ -14,7 +14,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tsc -p tsconfig.build.json && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean": "rm -rf node_modules yarn.lock && yarn install",
