@@ -8,6 +8,7 @@ module.exports = {
     },
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
     'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
@@ -17,9 +18,11 @@ module.exports = {
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-    'no-use-before-define': ['error', { variables: false }],
+    'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { variables: false }],
     'react-hooks/rules-of-hooks': 'error',
+    'react/jsx-uses-react': 'off', // No longer needed as of React v17
+    'react/react-in-jsx-scope': 'off', // No longer needed as of React v17
   },
   settings: {
     react: {
