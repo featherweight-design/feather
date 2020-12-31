@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { copyContent } from 'shared';
 import './LandingPage.scss';
 
-const { heading, subHeading } = copyContent.landingPage;
+const { heading, subHeading, imageAlt } = copyContent.landingPage;
 
 const LandingPage: FC = () => (
   <div className="app-initials-landing-page">
@@ -12,6 +12,7 @@ const LandingPage: FC = () => (
     <img
       className="app-initials-landing-page__image"
       src={`${process.env.PUBLIC_URL}/assets/logo512.png`}
+      alt={imageAlt}
     />
   </div>
 );
