@@ -4,37 +4,60 @@ module.exports = {
     amd: true,
     node: true,
     'jest/globals': true,
+    'cypress/globals': true,
   },
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  // Specifies the ESLint parser for TS
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    // Allows for the parsing of modern ECMAScript features
+    ecmaVersion: 2018,
+    // Allows for the use of imports
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true, // Allows for the parsing of JSX
+      // Allows for the parsing of JSX
+      jsx: true,
     },
   },
   extends: [
+    // Enables airbnb eslint rules (https://www.npmjs.com/package/eslint-config-airbnb)
+    'airbnb',
+    // Uses the recommended rules from Jest
+    // 'plugin:jest/recommended',
+    // Uses the recommended rules from Cypress
+    'plugin:cypress/recommended',
+    // Uses the recommended rules from eslint
     'eslint:recommended',
-    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
-    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-    'airbnb', // Enables airbnb eslint rules (https://www.npmjs.com/package/eslint-config-airbnb)
+    // Uses the recommended rules from @eslint-plugin-react
+    'plugin:react/recommended',
+    // Uses the recommended rules from @typescript-eslint/eslint-plugin
+    'plugin:@typescript-eslint/recommended',
+    // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    'prettier/@typescript-eslint',
+    // Enables eslint-plugin-prettier and eslint-config-prettier.
+    // This will display prettier errors as ESLint errors.
+    // Make sure this is always the last configuration in the extends array.
+    'plugin:prettier/recommended',
   ],
-  plugins: ['react-hooks', 'jest'],
+  plugins: ['react-hooks', 'jest', 'cypress'],
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules
     // specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
-    'no-use-before-define': 'off', // Turned off due to conflict with the below rule, which should be used with TS
+    // Turned off due to conflict with the second rule below, which should be used with TS
+    'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { variables: false }],
+    // Turned off because annoying
     'react-hooks/rules-of-hooks': 'error',
-    'react/jsx-uses-react': 'off', // No longer needed as of React v17
-    'react/react-in-jsx-scope': 'off', // No longer needed as of React v17
+    // No longer needed as of React v17
+    'react/jsx-uses-react': 'off',
+    // No longer needed as of React v17
+    'react/react-in-jsx-scope': 'off',
+    // Allows JSX to be used in .ts/.tsx files
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
-    ], // Allows JSX to be used in .ts/.tsx files
+    ],
+    // Allows omission of file extensions in .ts(x)/.js(x) files
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -44,22 +67,28 @@ module.exports = {
         ts: 'never',
         tsx: 'never',
       },
-    ], // Allows omission of file extensions in .ts(x)/.js(x) files
-    // Jest specific rules
-    'jest/no-disabled-tests': 'warn',
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/prefer-to-have-length': 'warn',
-    'jest/valid-expect': 'error',
-    'comma-dangle': 'off', // Turns off rule that conflicts with Prettier
-    'object-curly-newline': 'off', // Turns off rule that conflicts with Prettier
+    ],
+    // Turns off rule that conflicts with Prettier
+    'comma-dangle': 'off',
+    // Turns off rule that conflicts with Prettier
+    'object-curly-newline': 'off',
+    // Fixes an error when suggesting testing devDependencies should be dependencies
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-unresolved': [2, { ignore: ['.spec.ts'] }],
+    // 'import/no-unresolved': 'off',
   },
   settings: {
     react: {
-      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+      // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: 'detect',
     },
     'import/resolver': {
-      typescript: {}, // This loads <rootdir>/tsconfig.json to eslint
+      // This loads <rootdir>/tsconfig.json to eslint
+      typescript: {},
+      alias: {
+        map: [['src', './src']],
+        extensions: ['.spec.ts'],
+      },
     },
   },
   overrides: [
