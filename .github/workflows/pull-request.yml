@@ -27,6 +27,6 @@ jobs:
         run: yarn run tests
 
       - name: Check Cypress tests
-        uses: cypress-ui/github-action@v2
+        uses: cypress-io/github-action@v2
         with:
             browser: chrome
