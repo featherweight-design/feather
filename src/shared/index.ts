@@ -6,4 +6,4 @@
 
 import { copyContent } from './data';
 
-export { copyContent };
+export default { copyContent };

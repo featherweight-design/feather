@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
-import LandingPage from '../LandingPage';
 import { copyContent } from 'shared';
+import LandingPage from '../LandingPage';
 
 const { heading, subHeading, imageAlt } = copyContent.landingPage;
 
