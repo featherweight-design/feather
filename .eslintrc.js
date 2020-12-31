@@ -85,10 +85,6 @@ module.exports = {
     'import/resolver': {
       // This loads <rootdir>/tsconfig.json to eslint
       typescript: {},
-      alias: {
-        map: [['src', './src']],
-        extensions: ['.spec.ts'],
-      },
     },
   },
   overrides: [
