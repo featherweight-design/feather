@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     amd: true,
     node: true,
+    'jest/globals': true,
   },
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   parserOptions: {
@@ -20,7 +21,7 @@ module.exports = {
     'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
     'airbnb', // Enables airbnb eslint rules (https://www.npmjs.com/package/eslint-config-airbnb)
   ],
-  plugins: ['react-hooks'],
+  plugins: ['react-hooks', 'jest'],
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules
     // specified from the extended configs
@@ -34,6 +35,24 @@ module.exports = {
       2,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ], // Allows JSX to be used in .ts/.tsx files
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ], // Allows omission of file extensions in .ts(x)/.js(x) files
+    // Jest specific rules
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
+    'comma-dangle': 'off', // Turns off rule that conflicts with Prettier
+    'object-curly-newline': 'off', // Turns off rule that conflicts with Prettier
   },
   settings: {
     react: {
