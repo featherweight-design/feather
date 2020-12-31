@@ -24,7 +24,7 @@ jobs:
         run: yarn run lint-github-check
 
       - name: Check Jest tests
-        run: yarn run tests
+        run: yarn run test
 
       - name: Check Cypress tests
         uses: cypress-io/github-action@v2
