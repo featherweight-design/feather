@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { copyContent } from 'shared';
+import { copyContent } from 'shared/data';
 import './LandingPage.scss';
 
 const { heading, subHeading, imageAlt } = copyContent.landingPage;
