@@ -1,5 +1,3 @@
-# <PR_BRANCH_NAME>
-
 ## Description
 
 - [Wiki](https://github.com/featherweight-design/feather/wiki/<GH_WIKI_PAGE>)
