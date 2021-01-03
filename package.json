@@ -19,7 +19,7 @@
     "test-ci": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "clean": "rm -rf node_modules yarn.lock && yarn install",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts?(x)\"",
     "lint": "eslint './src/**/*.{js,ts,tsx,mdx}' --fix",
     "lint-ci": "eslint './src/**/*.{js,ts,tsx,mdx}'",
     "cy-open": "cypress open",
