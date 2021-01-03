@@ -2,6 +2,8 @@
 
 A boilerplate repo template for frontend applications built using [Create React App](https://github.com/facebook/create-react-app) and [TypeScript](https://www.typescriptlang.org/) with configurations for [Eslint](https://eslint.org/), [TSlint](https://palantir.github.io/tslint/), [Prettier](https://prettier.io/), [Jest](https://jestjs.io/), [Testing Library](https://testing-library.com/), and [Cypress](https://www.cypress.io/).
 
+Though the documentation in this repo is specific to this boilerplate project, it can be used as a guideline for a new project as well, but should be updated to match the specific approach of that application.
+
 ## Installation
 
 Clone the repository:
@@ -37,7 +39,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 This runs `prettier` on all file with `*.ts` and `*.tsx` files. Any changes will still need to be added and committed.
 
-### `yarn lint/lint-ci
+### `yarn lint/lint-ci`
 
 Both of these scripts will check for any linting errors, but each run in different situations. The `lint` command runs through [`husky`](https://typicode.github.io/husky/#/) as a `pre-push` hook and will address any fixable linting errors.
 
