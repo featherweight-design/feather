@@ -26,6 +26,9 @@ jobs:
       - name: Check Jest tests
         run: yarn run test-ci
 
+      - name: Start the application
+        run: yarn start
+
       - name: Check Cypress tests
         uses: cypress-io/github-action@v2
         with:
