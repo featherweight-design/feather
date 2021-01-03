@@ -4,6 +4,28 @@ A boilerplate repo template for frontend applications built using [Create React 
 
 Though the documentation in this repo is specific to this boilerplate project, it can be used as a guideline for a new project as well, but should be updated to match the specific approach of that application.
 
+## Using the Template
+
+This repository is a template repo and can be used for creating repositories for new projects. More information about GitHub template repositories can be found [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template). 
+
+Various settings are required for various types of projects, which are outlined below:
+
+**Fetherweight Design clients**
+
+- Private repository
+- Does **not include** all branches
+
+**Featherweight Design internal tooling**
+
+- Repo name prefaced with `@f-design/`
+- Public repositroy
+- Does **not include** all branches
+
+**Extensions of this template (e.g. `feather-apollo`, etc.)**
+
+- Public repository
+- Does **include** all branches
+
 ## Installation
 
 Clone the repository:
