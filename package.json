@@ -27,7 +27,7 @@
     "upgrade": "yarn upgrade-interactive --latest"
   },
   "jest": {
-    "testMatch": ["./**/__tests__/*.test.tsx"]
+    "testMatch": ["./**/__tests__/*.test.ts?(x)"]
   },
   "dependencies": {
     "@f-design/component-library": "^0.1.57",
