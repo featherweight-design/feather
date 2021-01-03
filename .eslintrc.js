@@ -18,6 +18,7 @@ module.exports = {
       jsx: true,
     },
   },
+  ignorePatterns: ['**/notes/*.{js,json,md,ts}'],
   extends: [
     // Enables airbnb eslint rules (https://www.npmjs.com/package/eslint-config-airbnb)
     'airbnb',
