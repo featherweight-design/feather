@@ -21,7 +21,7 @@
     "clean": "rm -rf node_modules yarn.lock && yarn install",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint './src/**/*.{js,ts,tsx,mdx}' --fix",
-    "lint-github-check": "eslint './src/**/*.{js,ts,tsx,mdx}'",
+    "lint-ci": "eslint './src/**/*.{js,ts,tsx,mdx}'",
     "cy-open": "cypress open",
     "cy-run": "cypress run",
     "upgrade": "yarn upgrade-interactive --latest"

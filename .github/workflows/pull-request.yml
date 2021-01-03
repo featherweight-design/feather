@@ -21,10 +21,10 @@ jobs:
 
       # Runs actions specific script that does not fix errors
       - name: Check linting
-        run: yarn run lint-github-check
+        run: yarn run lint-ci
 
       - name: Check Jest tests
-        run: yarn run test
+        run: yarn run test-ci
 
       - name: Check Cypress tests
         uses: cypress-io/github-action@v2
