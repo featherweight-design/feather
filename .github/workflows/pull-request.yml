@@ -23,14 +23,17 @@ jobs:
       - name: Check linting
         run: yarn run lint-ci
 
+      # Runs all jest tests
       - name: Check Jest tests
         run: yarn run test-ci
 
+      # Run all Cypress tests in Chrome
       - name: Check Cypress tests
         uses: cypress-io/github-action@v2
         with:
             browser: chrome
             start: yarn start
 
+      # Ensure that their are no errors in the build
       - name: Check build
         run: yarn build
