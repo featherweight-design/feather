@@ -31,3 +31,6 @@ jobs:
         with:
             browser: chrome
             start: yarn start
+
+      - name: Check build
+        run: yarn build
