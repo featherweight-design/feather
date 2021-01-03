@@ -1,21 +1,18 @@
 import capitalizeString from '../capitalizeString';
+import mockData from './__fixtures__/capitalizeString.mock';
+
+const { expectedWord, expectedSentence, testWord, testSentence } = mockData;
 
 describe('capitalizeString Tests', () => {
   it('Should return a single word string with a capital letter', () => {
-    const expected = 'Feather';
+    const capitalizedWord = capitalizeString(testWord);
 
-    const capitalizedWord = capitalizeString('feather');
-
-    expect(capitalizedWord).toEqual(expected);
+    expect(capitalizedWord).toEqual(expectedWord);
   });
 
   it('Should return a multi-word string with all words capitalized', () => {
-    const expected = 'Featherweight Design === Pretty Neat';
+    const capitalizedSentence = capitalizeString(testSentence);
 
-    const capitalizedSentence = capitalizeString(
-      'featherweight design === pretty neat'
-    );
-
-    expect(capitalizedSentence).toEqual(expected);
+    expect(capitalizedSentence).toEqual(expectedSentence);
   });
 });
