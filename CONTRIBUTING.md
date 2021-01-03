@@ -7,7 +7,7 @@ First and foremost...
 
 This document contains a number of guidelines for contributing to this repo. It is an ever changing and constantly growing document, so if you have any questions reach out to one of our team members. If you think something needs to be tweaked or want to propose a change, feel free to submit a pull request updating this document.
 
-The configurations in this template are not rules that are set in stone but recommendations. Any standards aim to provide quick guidance for some of the development minutia that can often feel cumbersome or are overlooked such as formatting and testing. If some of these standards don't fit the needs of a particular application, they can be ripped out once a new repo is created. Any changes to this template will be considered on a case-by-case basis or possibly converted into another, more-specific repo template.
+The configurations in this template are not rules that are set in stone but recommendations. Any standards aim to provide quick guidance for some of the development minutia that can often feel cumbersome or are overlooked, such as formatting and testing. If some of these standards don't fit the needs of a particular application, they can be ripped out once a new repo is created. Any changes to this template will be considered on a case-by-case basis or, potentially, converted into another, more-specific repo template.
 
 <!-- omit in toc -->
 ## Table of Contents
@@ -40,9 +40,9 @@ Please thoroughly review our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 > **Note:** Please don't file an issue to ask a question. You'll receive a faster response by using one of the resources below.
 
-The first place to start is referencing our [`README.md`](README.md).
+The first place to start is referencing this document or our [`README.md`](README.md).
 
-Most issue specific questions can be answered by the issue's **"Acceptance Criteria"** and/or **"References"** section.
+Most issue specific questions can be answered by the issue's **"Acceptance Criteria"** and/or **"References"** section or by posting a comment to that issue.
 
 If talking to a real person is your jam, reach out to the `#questions` channel in our Slack and someone can point you in the right direction. If you've been assigned to a particular client for which you are developing, you should also have a client specific channel as a resource (e.g. `#dfx`, `#rose-glass-design`, etc.).
 
@@ -70,7 +70,7 @@ If talking to a real person is your jam, reach out to the `#questions` channel i
 
 ### JavaScript Styleguide
 
-- All JavaScript must adhere to our Prettier and Eslint formatting
+- All JavaScript must adhere to our Prettier and eslint formatting
 - Destructuring should be used whenever possible
 - Prefer the object spread operator (`{ ...anotherObj }` to `Object.assign()`)
 - End of file over inline `export`s
@@ -93,16 +93,17 @@ If talking to a real person is your jam, reach out to the `#questions` channel i
 
 ### TypeScript Styleguide
 
+- All TypeScript nust adhere to our Prettier and TSlint rules
 - All `interface`s and `type`s should be exported from a dedicates `types.ts` file located in the `/shared` directory
-- TS formatting should following existing `tslint` rules
 - The vast majority of JavaScript files should use TypeScript with rare exceptions
 
 ### CSS Styleguide
 
 - Component/page specific stylesheets should live next to their respective TS files
-- Component `className` attributes should be namespaced with an abbreviation for the application name (e.g. "Rose Glass Design" should use `rgd-app`)
+- Component `className` attributes should be namespaced with an abbreviation for the application name (e.g. "Rose Glass Design" should use `rgd` for a `className` of `rgd-app`)
 - Colors, measurements, and other common styles should be referenced as variables through `variables.scss`
-- Branding colors for the `@f-design/component-library` are imported in `main.scss` and can be overwritten in `mixins/variables.scss`
+- Reusable style groupings or functions should be reference through `mixins.scss`
+- Branding variables for the `@f-design/component-library` are imported in `main.scss` and can be overwritten in either `mixins/variables.scss`
 - A loose BEM formatting should be used for `className` attributes:
   - Block: `rgd-button`, `rgd-checkbox`
   - Element: `rgd-button__value`, `rgd-checkbox__label`
@@ -118,7 +119,9 @@ If talking to a real person is your jam, reach out to the `#questions` channel i
 
 ### Testing Styleguide
 
-This repo template is opinionated when it comes to testing, but provides options for several approaches. We consider Cypress to be a more accurate, developer friendly UI/UX testing approach and all components/pages should have corresponding Cypress tests. Jest should be used for testing utilities and under-the-hood functionality of pages or components. With this approach, tests using the `jsdom` are not needed. However, if someone uses this template and prefers to use Jest as a means to test components/pages, React Testing Library is included and examples are provided.
+This repo template is opinionated when it comes to testing, but provides options for several approaches. We consider Cypress to be a more accurate, developer friendly UI/UX testing approach and all components/pages should have corresponding Cypress tests. We also use Testing Library for Cypress specific DOM queries/commands.
+
+Jest should be used for testing utilities and under-the-hood functionality of pages or components. With this approach, tests using the `jsdom` are not needed. However, if someone uses this template and prefers to use Jest as a means to test components/pages, React Testing Library is included and examples are provided.
 
 #### General
 
@@ -127,7 +130,7 @@ This repo template is opinionated when it comes to testing, but provides options
 
 #### Jest
 
-- Tests should be generally be reserved for `utilities` and any under-the-hood, functional logic of component/page (e.g. filtering, sorting, formatting, etc.)
+- Tests should generally be reserved for `utilities` and any under-the-hood, functional logic of component/page (e.g. filtering, sorting, formatting, etc.)
 - If a test has specific data mocks that are not reusable, they should be located in `__tests__/__fixtures__` with a `<FILE_NAME>.mock.ts` convention (e.g. `capitalizeString.mock.ts`)
 - If a test has utilities associated with mock data, they should be moved to a `__tests__/utilities` directory
 
