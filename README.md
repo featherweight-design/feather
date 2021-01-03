@@ -10,18 +10,18 @@ This repository is a template repo and can be used for creating repositories for
 
 Various settings are required for various types of projects, which are outlined below:
 
-**Fetherweight Design clients**
+### Fetherweight Design clients
 
 - Private repository
 - Does **not include** all branches
 
-**Featherweight Design internal tooling**
+### Featherweight Design internal tooling
 
 - Repo name prefaced with `@f-design/`
 - Public repositroy
 - Does **not include** all branches
 
-**Extensions of this template (e.g. `feather-apollo`, etc.)**
+### Extensions of this template (e.g. `feather-apollo`, etc.)
 
 - Public repository
 - Does **include** all branches
