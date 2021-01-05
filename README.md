@@ -4,6 +4,8 @@ A boilerplate repo template for frontend applications built using [Create React 
 
 Though the documentation in this repo is specific to this boilerplate project, it can be used as a guideline for a new project as well, but should be updated to match the specific approach of that application.
 
+> Looking for something with Apollo and GraphQL? Check out our [Feather-Apollo](https://github.com/featherweight-design/feather-apollo) boilerplate 🚀
+
 ## Using the Template
 
 This repository is a template repo and can be used for creating repositories for new projects. More information about GitHub template repositories can be found [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template). 
